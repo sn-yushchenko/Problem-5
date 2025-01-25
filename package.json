@@ -1,0 +1,39 @@
+{
+  "name": "problem-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/app.ts",
+    "start:dev": "npm run build && nodemon ./dist/app.js",
+    "typeorm": "npx typeorm-ts-node-commonjs",
+    "orm-create": "npm run typeorm migration:create -d src/database/migrations/StoreTable",
+    "migrate": "npm run typeorm -- migration:run  -d src/config/pg-orm-config.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sn-yushchenko/Problem-5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sn-yushchenko/Problem-5/issues"
+  },
+  "homepage": "https://github.com/sn-yushchenko/Problem-5#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.10",
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.7"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20"
+  }
+}
