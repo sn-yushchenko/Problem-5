@@ -6,7 +6,7 @@ export class StoreController {
 
     static async getStores(req: Request, res: Response): Promise<void> {
         try {
-            const data = await postgresSource.getRepository(Store).find();
+            const data = await postgresSource.getRepository(Store).find({where: {...req.query}});
             console.log(data);
             res.status(200).json({
                 status: 'success',
